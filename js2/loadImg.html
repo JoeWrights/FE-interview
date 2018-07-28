@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- js怎么控制一次加载一张图片，加载完后再加载下一张 -->
+  <div id="mypic">onloading……</div>
+  <script type="text/javascript">
+    var obj=new Image();
+    obj.src="http://www.phpernote.com/uploadfiles/editor/201107240502201179.jpg";
+    obj.onload=function(){
+    alert('图片的宽度为：'+obj.width+'；图片的高度为：'+obj.height);
+    document.getElementById("mypic").innnerHTML="<img src='"+this.src+"' />";
+    }
+  </script>
+</body>
+</html>

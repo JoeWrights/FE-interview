@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js拖拽</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .obj {
+      width: 100px;
+      height: 100px;
+      background: #ff6700;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="obj">
+
+  </div>
+  <script>
+    var d1 = document.querySelector('.obj');
+    d1.addEventListener('mousedown', (e) => {
+      var mouseX = e.clientX;
+      var mouseY = e.clientY;
+      var pianyiX = mouseX - d1.offsetLeft;
+      var pianyiY = mouseY - d1.offsetTop;
+      document.onmousemove = (e) => {
+        var newX = e.clientX - pianyiX;
+        var newY = e.clientY - pianyiY;
+        d1.style.marginLeft = newX + "px";
+        d1.style.marginTop = newY + "px";
+      };
+    });
+    document.onmouseup = (e) => {
+      document.onmousemove = null;
+    };
+  </script>
+</body>
+
+</html>
