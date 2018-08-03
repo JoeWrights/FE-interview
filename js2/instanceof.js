@@ -17,4 +17,5 @@ var obj = {
   value: 1
 };
 
+
 console.log(instanceof2(obj, Object));
