@@ -10,7 +10,8 @@ new Promise((resolve, reject) => {
   resolve();
 }).then(() => {
   console.log(3);
-}).then(() => {
+}).then((num) => {
+  console.log(num);
   console.log(4);
 }); 
 
@@ -19,7 +20,7 @@ process.nextTick(() => {
 });
 
 console.log(6);
-//2,6,5,3,4,1
+//2,6,5,3,undefined,4,1
 
 // 定义promise的构造部分是同步的， 
 // 因此先输出2 ，主体部分再输出6
